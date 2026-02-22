@@ -78,10 +78,71 @@
 
         .footer { text-align: center; padding: 40px; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; margin-top: 60px; }
 
+        /* Scrollable table wrapper */
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px -4px 24px; }
+        .table-wrap table { margin: 0; min-width: 500px; }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero { padding: 48px 20px; }
-            .bar-label { width: 120px; font-size: 0.75rem; }
+            .hero { padding: 48px 16px; }
+            .hero h1 { font-size: 1.75rem; line-height: 1.2; }
+            .hero .subtitle { font-size: 1rem; }
+
+            .container { padding: 24px 16px; }
+
+            .exec-summary { padding: 24px 16px; margin-bottom: 32px; border-radius: 12px; }
+            .exec-summary h2 { font-size: 1.3rem; }
+            .exec-summary p { font-size: 0.95rem; }
+
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; }
+            .kpi-card { padding: 16px 10px; border-radius: 10px; }
+            .kpi-card .value { font-size: 1.4rem; }
+            .kpi-card .label { font-size: 0.75rem; }
+            .kpi-card .sub { font-size: 0.65rem; }
+
+            section { margin-bottom: 40px; }
+            section > h2 { font-size: 1.35rem; margin-bottom: 16px; }
+            section > h3 { font-size: 1.1rem; margin: 20px 0 10px; }
+            section > h4 { font-size: 0.95rem; }
+            section p { font-size: 0.9rem; }
+
+            th { padding: 10px 12px; font-size: 0.8rem; white-space: nowrap; }
+            td { padding: 8px 12px; font-size: 0.8rem; }
+
+            .bar-chart { margin: 16px 0 20px; }
+            .bar-row { flex-direction: column; align-items: flex-start; margin-bottom: 12px; }
+            .bar-label { width: 100%; text-align: left; padding: 0 0 4px 0; font-size: 0.8rem; }
+            .bar-track { width: 100%; height: 26px; }
+            .bar-fill { font-size: 0.75rem; padding-left: 10px; }
+
+            .highlight-box { padding: 16px; margin: 16px 0; }
+            .highlight-box p { font-size: 0.9rem; }
+
+            .risk-grid { grid-template-columns: 1fr; gap: 12px; }
+            .risk-card { padding: 16px; }
+            .risk-card .risk-title { font-size: 0.9rem; }
+            .risk-card p { font-size: 0.8rem; }
+
+            .timeline { margin: 20px 0 20px 10px; padding-left: 20px; }
+            .timeline-item::before { left: -27px; width: 12px; height: 12px; }
+            .timeline-item .year { font-size: 0.95rem; }
+            .timeline-item .title { font-size: 0.85rem; }
+            .timeline-item p { font-size: 0.8rem; }
+
+            .phase-grid { grid-template-columns: 1fr; gap: 16px; }
+            .phase-card { padding: 20px 16px; }
+            .phase-card h4 { font-size: 1rem; }
+            .phase-card li { font-size: 0.85rem; }
+
+            .ingredient-tag { font-size: 0.75rem; padding: 4px 10px; margin: 2px; }
+
+            .footer { padding: 28px 16px; margin-top: 40px; }
+            .footer p { font-size: 0.75rem; }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 { font-size: 1.4rem; }
+            .kpi-grid { grid-template-columns: 1fr; }
+            .kpi-card .value { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -132,13 +193,13 @@
         <h3>The Nicotine Pouch Template</h3>
         <p>The nootropic pouch market is modeled directly on the nicotine pouch revolution led by Zyn. Philip Morris paid $16 billion for Swedish Match (Zyn's parent) in 2022. Zyn shipment volumes grew over 50% year-over-year in 2025. This format validation is the foundation for nootropic pouches.</p>
 
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>Metric</th><th>Nicotine Pouches</th><th>Nootropics (Broad)</th><th>Caffeine/Energy Pouches</th></tr>
             <tr><td>Market Size (2024-25)</td><td>$5.1 billion</td><td>&gt;$10 billion</td><td>~$1 billion</td></tr>
             <tr><td>Projected (2032-35)</td><td>$45.6 billion</td><td>$73-80 billion</td><td>$1.68 billion</td></tr>
             <tr><td>CAGR</td><td>31.5%</td><td>~14-15%</td><td>~5.9%</td></tr>
             <tr><td>Key Signal</td><td>PMI $40B+ revenue from Zyn</td><td>Category expanding into pouches</td><td>Swisher $135M expansion</td></tr>
-        </table>
+        </table></div>
 
         <h3>Investment Signals</h3>
         <div class="bar-chart">
@@ -162,7 +223,7 @@
         <h2>2. Ingredients, Formulation & Science</h2>
 
         <h3>Key Nootropic Ingredients</h3>
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>Ingredient</th><th>Function</th><th>Dose/Pouch</th><th>Notes</th></tr>
             <tr><td>Caffeine (natural)</td><td>Alertness, energy</td><td>30-50mg</td><td>From green tea; some brands avoid</td></tr>
             <tr><td>L-Theanine</td><td>Calm focus</td><td>50-100mg</td><td>Best synergy with caffeine</td></tr>
@@ -174,7 +235,7 @@
             <tr><td>Ginseng Extract</td><td>Mental clarity</td><td>25-50mg</td><td>Well-known to consumers</td></tr>
             <tr><td>L-Tyrosine</td><td>Neurotransmitter precursor</td><td>50-60mg</td><td>Fully Loaded ALPHA</td></tr>
             <tr><td>GABA</td><td>Stress relief, calm</td><td>20-50mg</td><td>Debated BBB crossing</td></tr>
-        </table>
+        </table></div>
 
         <h3>Bioavailability Advantage: Buccal Delivery</h3>
         <p>The core scientific differentiator. Active ingredients bypass the digestive system and first-pass liver metabolism, absorbing directly through oral mucosa.</p>
@@ -240,14 +301,14 @@
         <h2>3. Consumer Demographics & Demand</h2>
 
         <h3>Primary Target Segments</h3>
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>Segment</th><th>Age</th><th>Use Case</th><th>WTP</th><th>Channel</th></tr>
             <tr><td><strong>Knowledge Workers</strong></td><td>25-45</td><td>Sustained focus, deep work</td><td>$30-50/can</td><td>DTC, Amazon</td></tr>
             <tr><td><strong>College Students</strong></td><td>18-24</td><td>Studying, exam prep</td><td>$5-15/can</td><td>Campus, C-stores</td></tr>
             <tr><td><strong>Nicotine Quitters</strong></td><td>21-40</td><td>Replace Zyn/nicotine pouches</td><td>$5-7/can</td><td>C-stores, gas stations</td></tr>
             <tr><td><strong>Gamers / Esports</strong></td><td>16-30</td><td>Competitive performance</td><td>$15-30/can</td><td>DTC, events</td></tr>
             <tr><td><strong>Athletes / Fitness</strong></td><td>20-40</td><td>Pre-workout, competition</td><td>$25-45/can</td><td>GNC, gyms, DTC</td></tr>
-        </table>
+        </table></div>
 
         <div class="highlight-box">
             <p>"Consumers don't want to be 'quitting nicotine.' They want to be 'upgrading to something better.' Position nootropic pouches as a PERFORMANCE UPGRADE, not a cessation aid." -- This framing is what separates Ultra ($36/can) from generic nicotine-free products ($5/can).</p>
@@ -264,22 +325,22 @@
         <h2>4. Competitive Landscape</h2>
 
         <h3>Tier 1: Well-Funded / Scaled Brands</h3>
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>Brand</th><th>Key Ingredient</th><th>Price</th><th>Distribution</th><th>Funding</th></tr>
             <tr><td><strong>Ultra Pouches</strong></td><td>Enfinity paraxanthine</td><td>$36-48/can</td><td>DTC, expanding retail</td><td>$11M Series A</td></tr>
             <tr><td><strong>Neuro</strong></td><td>Caffeine + L-theanine</td><td>$20-30</td><td>TikTok Shop, Amazon, retail</td><td>Shark Tank alum</td></tr>
             <tr><td><strong>Mojo (Swisher)</strong></td><td>50mg green tea caffeine</td><td>$5-7/can</td><td>Convenience, gas stations</td><td>$135M mfg expansion</td></tr>
-        </table>
+        </table></div>
 
         <h3>Tier 2: Established Niche Players</h3>
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>Brand</th><th>Focus</th><th>Price</th><th>Distribution</th></tr>
             <tr><td>Flowblend</td><td>CBD + Nootropic</td><td>$11.95-$35</td><td>DTC, wholesale</td></tr>
             <tr><td>Fully Loaded ALPHA</td><td>Budget nootropic</td><td>$4.99/can</td><td>DTC, select retail</td></tr>
             <tr><td>Nectr</td><td>Cognizin + caffeine</td><td>Premium</td><td>DTC</td></tr>
             <tr><td>NZE Pouches</td><td>Energy + focus</td><td>Premium</td><td>DTC, store locator</td></tr>
             <tr><td>Wip Energy</td><td>Performance</td><td>Mid</td><td>DTC, natural retail</td></tr>
-        </table>
+        </table></div>
 
         <h3>Pricing Landscape</h3>
         <div class="bar-chart">
@@ -314,7 +375,7 @@
         </div>
 
         <h3>Unit Economics (Estimated)</h3>
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>Metric</th><th>Budget Brand</th><th>Premium Brand</th></tr>
             <tr><td>COGS per can (20 pouches)</td><td>$2.00-$3.00</td><td>$3.50-$5.00</td></tr>
             <tr><td>Wholesale price</td><td>$3.50-$4.50</td><td>$18-$25</td></tr>
@@ -322,7 +383,7 @@
             <tr><td>DTC price</td><td>$5.99-$8.00</td><td>$31-$36 (sub)</td></tr>
             <tr><td>Gross margin (DTC)</td><td>50-60%</td><td>75-85%</td></tr>
             <tr><td>Gross margin (Wholesale)</td><td>25-35%</td><td>55-70%</td></tr>
-        </table>
+        </table></div>
 
         <h3>Big Tobacco / CPG Threat</h3>
         <div class="risk-grid">
@@ -362,7 +423,7 @@
         <h2>5. Growth Opportunities & Strategic Outlook</h2>
 
         <h3>Market Tailwinds</h3>
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>Tailwind</th><th>Signal</th></tr>
             <tr><td>Nicotine Cessation Wave</td><td>Millions of Zyn users seeking alternatives; r/QuittingZyn growing</td></tr>
             <tr><td>Wellness Culture</td><td>Gen Z/Millennials prioritize functional wellness; "clean" products command premiums</td></tr>
@@ -371,7 +432,7 @@
             <tr><td>Social Commerce</td><td>Neuro's explosive TikTok Shop growth; pouch format inherently shareable</td></tr>
             <tr><td>Retail Readiness</td><td>Convenience stores already have dedicated pouch sections from Zyn</td></tr>
             <tr><td>Celebrity Investment</td><td>Joe Burrow, Dak Prescott, Lindsey Vonn backing Ultra</td></tr>
-        </table>
+        </table></div>
 
         <h3>Whitespace Opportunities</h3>
 
@@ -439,7 +500,7 @@
         <h2>6. What It Takes to Win</h2>
 
         <h3>Key Success Factors</h3>
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>#</th><th>Factor</th><th>Why</th></tr>
             <tr><td>1</td><td><strong>Brand Story > Ingredients</strong></td><td>Ultra's success is "focus for high performers" -- the narrative, not the formula</td></tr>
             <tr><td>2</td><td><strong>Speed to Market</strong></td><td>12-24 month window. PouchWorx: 90 days to product</td></tr>
@@ -448,7 +509,7 @@
             <tr><td>5</td><td><strong>Subscription Economics</strong></td><td>LTV comes from recurring. One-time purchases are for trial</td></tr>
             <tr><td>6</td><td><strong>Regulatory Proactivity</strong></td><td>Compliant brands survive what kills competitors</td></tr>
             <tr><td>7</td><td><strong>Sampling Machine</strong></td><td>Every free sample is a potential subscriber</td></tr>
-        </table>
+        </table></div>
 
         <h3>Go-To-Market Phases</h3>
         <div class="phase-grid">
@@ -487,7 +548,7 @@
         </div>
 
         <h3>Minimum Viable Launch Investment</h3>
-        <table>
+        <div class="table-wrap"><table>
             <tr><th>Category</th><th>Estimated Cost</th></tr>
             <tr><td>Product development & formulation</td><td>$15,000 - $30,000</td></tr>
             <tr><td>Initial manufacturing (90K pouches)</td><td>$25,000 - $50,000</td></tr>
@@ -499,7 +560,7 @@
             <tr><td>Working capital buffer</td><td>$15,000 - $30,000</td></tr>
             <tr style="background:#1e293b"><td><strong>TOTAL MINIMUM LAUNCH</strong></td><td><strong>$105,000 - $230,000</strong></td></tr>
             <tr><td><em>To scale to $1M+ ARR (12 months)</em></td><td><em>$300,000 - $500,000</em></td></tr>
-        </table>
+        </table></div>
 
         <h3>Marketing Budget Allocation</h3>
         <div class="bar-chart">
