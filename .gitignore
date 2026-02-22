@@ -1,1 +1,16 @@
+# Deploy
 .vercel
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Dev notes (not part of deliverable)
+research_notes.md
